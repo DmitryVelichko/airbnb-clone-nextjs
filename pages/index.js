@@ -15,6 +15,12 @@ const Home = () => {
      <Header />
      <Banner />
 
+     <main>
+        <section>
+          <h2>Explore Nearby</h2>
+        </section>
+     </main>
+
     </div>
   )
 }

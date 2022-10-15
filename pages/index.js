@@ -1,10 +1,10 @@
 import Head from 'next/head';
-import Image from 'next/image';
 import Header from '../components/Header';
 import Banner from '../components/Banner';
 import SmallCard from '../components/SmallCard';
+import MediumCard from '../components/MediumCard'
 
-const Home = ({ exploreData }) => {
+const Home = ({ exploreData, cardsData }) => {
   return (
     <div className=''>
       <Head>
@@ -32,7 +32,14 @@ const Home = ({ exploreData }) => {
         </section>
 
         <section>
-          <h2 className='text-4xl font-semibold py-8'>Live Anywhere</h2>
+        <h2 className='text-4xl font-semibold py-8'>Live Anywhere</h2>
+
+          <div className='flex space-x-3 overflow-scroll scrollbar-hide'>
+          {cardsData?.map(({img, title}) => (
+             <MediumCard key={img} img={img} title={title}/>
+          ))
+          }
+           </div>
         </section>
       </main>
     </div>
@@ -53,6 +60,7 @@ export async function getStaticProps() {
   return {
     props: {
       exploreData,
+      cardsData
     },
   };
 }

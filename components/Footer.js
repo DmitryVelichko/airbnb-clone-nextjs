@@ -27,7 +27,14 @@ function Footer() {
             <p>How to host responsibly</p>
             <p>Explore hosting resources</p>
         </div>
-       
+        <div className='space-y-4 text-xs text-gray-800'>
+            <h5 className='font-bold'>SUPPORT</h5>
+            <p>Help Center</p>
+            <p>Trust & Safety</p>
+            <p>Say Hi YouTube</p>
+            <p>Easter Eggs</p>
+            <p>For the Win</p>
+        </div>
     </div>
   )
 }

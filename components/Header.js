@@ -30,6 +30,10 @@ function Header() {
     key: 'selection',
   };
 
+  const resetInput = () => {
+    setSearchInput('')
+  }
+
   return (
     <header className='sticky top-0 z-50 grid grid-cols-3 bg-white shadow-md p-5 md:px-10'>
       <div className='relative flex items-center h-10 cursor-pointer my-auto'>
@@ -75,10 +79,17 @@ function Header() {
             <UsersIcon className='h-5' />
             <input
               value={noOfGuests}
-              onChange={e => setNoOfGuests(e.target.value)}
+              onChange={(e) => setNoOfGuests(e.target.value)}
               type='number'
+              min={1}
               className='w-12 pl-2 text-lg outline-none text-red-400'
             />
+          </div>
+          <div>
+            <div className='flex'>
+              <button onClick={resetInput} className='flex-grow text-gray-400'>Cancel</button>
+              <button className='flex-grow text-red-400'>Search</button>
+            </div>
           </div>
         </div>
       )}

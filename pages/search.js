@@ -1,8 +1,13 @@
 import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import {useRouter} from 'next/dist/client/router'
 
 function Search() {
+
+const router = useRouter()
+const {location, startDate, endDate, noOfGuests} = router.query;
+
   return (
     <div>
       <Header />

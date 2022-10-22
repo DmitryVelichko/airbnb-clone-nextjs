@@ -12,7 +12,7 @@ function Search({ searchResults }) {
   const formattedStartDate = format(new Date(startDate), 'dd MMMM yyyy');
   const formattedEndDate = format(new Date(endDate), 'dd MMMM yyyy');
   const range = `${formattedStartDate} — ${formattedEndDate}`;
-
+  console.log(searchResults)
   return (
     <div>
       <Header placeholder={`${location} | ${range} | ${noOfGuests} guests`} />
@@ -33,9 +33,11 @@ function Search({ searchResults }) {
             <p className='button'>More Filters</p>
           </div>
 
-          {searchResults.map(
+         <div className='flex flex-col'>
+         {searchResults.map(
             ({ img, location, title, description, star, price, total }) => (
               <InfoCard
+                key={img}
                 img={img}
                 location={location}
                 title={title}
@@ -46,6 +48,7 @@ function Search({ searchResults }) {
               />
             )
           )}
+         </div>
         </section>
       </main>
       <Footer />
@@ -55,7 +58,7 @@ function Search({ searchResults }) {
 
 export default Search;
 
-export async function getSererSideProps() {
+export async function getServerSideProps() {
   const searchResults = await fetch('https://www.jsonkeeper.com/b/5NPS').then(
     (res) => res.json()
   );

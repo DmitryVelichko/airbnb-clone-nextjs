@@ -10,10 +10,12 @@
     "@heroicons/react": "v1",
     "axios": "^1.1.2",
     "date-fns": "^2.29.3",
+    "mapbox-gl": "^2.10.0",
     "next": "latest",
     "react": "^18.2.0",
     "react-date-range": "^1.4.0",
     "react-dom": "18.1.0",
+    "react-map-gl": "6.0.1",
     "tailwind-scrollbar-hide": "^1.1.7"
   },
   "devDependencies": {

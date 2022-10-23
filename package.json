@@ -10,6 +10,7 @@
     "@heroicons/react": "v1",
     "axios": "^1.1.2",
     "date-fns": "^2.29.3",
+    "geolib": "^3.3.3",
     "mapbox-gl": "^2.10.0",
     "next": "latest",
     "react": "^18.2.0",

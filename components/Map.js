@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import ReactMapGL from 'react-map-gl';
+import ReactMapGL, {Marker, Popup} from 'react-map-gl';
 import  getCenter  from 'geolib/es/getCenter';
 
 function Map({searchResults}) {
@@ -28,6 +28,14 @@ function Map({searchResults}) {
       {...viewport}
       onViewportChange={(nextViewport) => {console.log(nextViewport);setViewport(nextViewport)}}
       >
+        {searchResults.map(result => (
+            <div key={result.long}>
+              <Marker 
+              longitude={result.long}
+              latitude={result.lat}
+              ></Marker>
+            </div>
+        ))}
     </ReactMapGL>
   );
 }
